@@ -21,12 +21,10 @@ resource "digitalocean_droplet" "react-app" {
             "sudo apt-get update",
             "sudo apt-get -y install git",
             # install node
-            "sudo apt-get install build-essential libssl-dev",
-            "curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh -o install_nvm.sh",
-            "bash install_nvm.sh",
-            "source ~/.profile",
-            "nvm install 8.9.4",
-            "nvm use 8.9.4",
+            "sudo apt-get -y install build-essential libssl-dev",
+            "curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -",
+            "sudo apt-get install -y nodejs",
+            "sudo apt-get install -y npm",
             # create the react app
             "npx create-react-app my-app",
             "cd my-app",
